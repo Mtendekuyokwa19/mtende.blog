@@ -1,10 +1,33 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { Maven_Pro, Inter, Rowdies, Pacifico } from 'next/font/google'
 import "./globals.css";
+import { Footer, Navbar } from "./page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+const inter = Pacifico({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: '400',
+  variable: '--font-pacifico'
+})
+const maven = Maven_Pro({
+
+  subsets: ['latin'],
+  display: 'swap',
+  weight: '400',
+  variable: '--font-maven-pro'
+
+
+})
+const rowdies = Rowdies({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: '400',
+  variable: '--font-rowdies'
+})
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -18,12 +41,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${maven.variable} ${inter.variable} ${rowdies.variable} antialiased`}>
+
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+
+
       >
+        <Navbar />
         {children}
+        <Footer />
       </body>
-    </html>
+    </html >
   );
 }
+
+
