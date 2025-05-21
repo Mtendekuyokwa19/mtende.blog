@@ -43,7 +43,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${maven.variable} ${inter.variable} ${rowdies.variable} antialiased`}>
 
-      <body
+      <body className="flex flex-col justify-center items-center"
 
 
       >
