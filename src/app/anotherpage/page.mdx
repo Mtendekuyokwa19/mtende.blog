@@ -1,11 +1,8 @@
+import MdxLayout from '../components/mdx-layout.js'
+ 
 # Welcome to my MDX page!
-``yandhi`` 
-This is some **bold** and _italics_ text.
  
-This is a list in markdown:
+export default function MDXPage({ children }) {
+  return <MdxLayout>{children}</MdxLayout>
  
-- One
-- Two
-- Three
- 
-Checkout my React component:
+}
