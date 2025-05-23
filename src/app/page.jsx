@@ -163,8 +163,8 @@ const ThemeSwitch = () => {
 	const currentTheme = theme === "system" ? systemTheme : theme;
 	useEffect(() => {
 		setMount(true);
-		console.log(systemTheme, theme, currentTheme)
 	}, []);
+	if (!mount) return null;
 	return mount ? (
 		<div className="z-[10000000000]   ">
 			<button
