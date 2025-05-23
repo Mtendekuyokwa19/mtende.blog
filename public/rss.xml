@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Mtende's Blog]]></title>
+        <description><![CDATA[A blog by Mtende Kuyokwa - Student, Developer, and Linux enthusiast]]></description>
+        <link>https://mtende-blog.vercel.app</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Fri, 23 May 2025 14:34:19 GMT</lastBuildDate>
+        <atom:link href="https://mtende-blog.vercel.app/rss.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Fri, 23 May 2025 14:34:19 GMT</pubDate>
+        <copyright><![CDATA[2025 Mtende Kuyokwa]]></copyright>
+        <language><![CDATA[en]]></language>
+        <ttl>60</ttl>
+        <item>
+            <title><![CDATA[The Boy by Ryn Dahl - Book Review]]></title>
+            <description><![CDATA[A compelling literary novel exploring trauma and resilience]]></description>
+            <link>https://mtende-blog.vercel.app/anotherpage</link>
+            <guid isPermaLink="true">https://mtende-blog.vercel.app/anotherpage</guid>
+            <dc:creator><![CDATA[Mtende Kuyokwa]]></dc:creator>
+            <pubDate>Fri, 23 May 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The Boy by Ryn Dahl - Book Review]]></title>
+            <description><![CDATA[A compelling literary novel exploring trauma and resilience]]></description>
+            <link>https://mtende-blog.vercel.app/mdx-page</link>
+            <guid isPermaLink="true">https://mtende-blog.vercel.app/mdx-page</guid>
+            <dc:creator><![CDATA[Mtende Kuyokwa]]></dc:creator>
+            <pubDate>Fri, 23 May 2025 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
