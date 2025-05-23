@@ -1,4 +1,4 @@
-// scripts/generate-rss.js
+// scripts/generate-rss.j// scripts/generate-rss.js
 const RSS = require("rss");
 const fs = require("fs");
 const path = require("path");
@@ -10,13 +10,10 @@ function findMDXFiles(dir, fileList = []) {
     console.log(`Directory ${dir} does not exist, skipping...`);
     return fileList;
   }
-
   const files = fs.readdirSync(dir);
-
   files.forEach((file) => {
     const filePath = path.join(dir, file);
     const stat = fs.statSync(filePath);
-
     if (stat.isDirectory()) {
       // Skip node_modules and .next directories
       if (!file.startsWith(".") && file !== "node_modules") {
@@ -26,8 +23,31 @@ function findMDXFiles(dir, fileList = []) {
       fileList.push(filePath);
     }
   });
-
   return fileList;
+}
+
+// Function to clean and process MDX content for RSS
+function processContentForRSS(content) {
+  // Remove MDX/JSX components and keep only markdown content
+  let cleanContent = content
+    // Remove import statements
+    .replace(/^import\s+.*$/gm, "")
+    // Remove JSX components (basic removal)
+    .replace(/<[^>]+>/g, "")
+    // Clean up markdown syntax for better RSS readability
+    .replace(/```[\s\S]*?```/g, "[Code Block]") // Replace code blocks
+    .replace(/`([^`]+)`/g, "$1") // Remove inline code backticks
+    .replace(/\*\*([^*]+)\*\*/g, "$1") // Remove bold markdown
+    .replace(/\*([^*]+)\*/g, "$1") // Remove italic markdown
+    .replace(/#{1,6}\s+/g, "") // Remove heading markers
+    .replace(/^\s*[-*+]\s+/gm, "• ") // Convert markdown lists to bullet points
+    .replace(/^\s*\d+\.\s+/gm, "• ") // Convert numbered lists to bullet points
+    // Clean up extra whitespace
+    .replace(/\n\s*\n\s*\n/g, "\n\n") // Remove excessive line breaks
+    .replace(/^\s+|\s+$/g, "") // Trim whitespace
+    .trim();
+
+  return cleanContent;
 }
 
 function generateRSS() {
@@ -46,7 +66,6 @@ function generateRSS() {
   // Get all MDX files from src/app directory recursively
   const appDirectory = path.join(process.cwd(), "src", "app");
   const mdxFiles = findMDXFiles(appDirectory);
-
   console.log(`Found ${mdxFiles.length} MDX files`);
 
   const posts = mdxFiles
@@ -68,21 +87,20 @@ function generateRSS() {
           slug = "home";
         }
 
-        // Extract a description from content if not provided
+        // Process the full content for RSS
+        const processedContent = processContentForRSS(content);
+
+        // Extract a description from content if not provided in frontmatter
         const description =
-          data.description ||
-          content
-            .replace(/[#*_`]/g, "")
-            .substring(0, 200)
-            .trim() + "...";
+          data.description || processedContent.substring(0, 200).trim() + "...";
 
         return {
           title: data.title,
           date: data.date,
           description: description,
+          content: processedContent, // Include the full processed content
           author: data.author || "Mtende Kuyokwa",
           slug,
-          content,
           filePath: relativePath,
           ...data,
         };
@@ -110,11 +128,17 @@ function generateRSS() {
 
     feed.item({
       title: post.title,
-      description: post.description,
+      description: post.content, // Use full content instead of just description
       url: postUrl,
       date: post.date || new Date(),
       author: post.author,
       categories: post.tags || post.categories || [],
+      // You can also include a separate description field if needed
+      custom_elements: [
+        {
+          "content:encoded": `<![CDATA[${post.content.replace(/\n/g, "<br>")}]]>`,
+        },
+      ],
     });
 
     console.log(`Added to RSS: ${post.title} -> ${postUrl}`);
@@ -129,6 +153,7 @@ function generateRSS() {
   // Write RSS feed to public directory
   const rssPath = path.join(publicDir, "rss.xml");
   fs.writeFileSync(rssPath, feed.xml({ indent: true }));
+
   console.log(`RSS feed generated successfully at ${rssPath}!`);
   console.log(`Feed contains ${posts.length} items`);
 }
