@@ -26,7 +26,7 @@ export function Navbar() {
 		<nav className="flex border-1  sticky top-1 backdrop-blur-md  border-slate-400 my-2 rounded-2xl font-sans w-4/5 justify-between lg:py-3 py-2 px-4 lg:px-8 items-center   ">
 			<h1 className="md:text-3xl  text-md font-bold"><a href="/">Mtende</a><span className="text-emerald-400 ">.</span></h1>
 
-			<div className="flex md:gap-6 gap-2">
+			<div className="flex justify-center items-center md:gap-6 gap-2">
 				<a href="">
 
 					<BsRssFill className="w-5" />
@@ -40,6 +40,7 @@ export function Navbar() {
 
 
 					<BsMailbox className="w-5" /> </a>
+
 				<ThemeSwitch />
 			</div>
 		</nav>
@@ -50,7 +51,7 @@ export function Footer() {
 	const iconsize = 20;
 	return (
 
-		<footer className="flex text-sm dark:bg-stone-900 bg-stone-400 lg:text-md lg:w-2/3 w-4/5 p-4 justify-between lg:p-8 items-center  ">
+		<footer className="flex text-sm   lg:text-md lg:w-2/3 w-4/5 p-4 justify-between lg:p-8 items-center  ">
 
 			<a href="mailto:mtendekuyokwa19@gmail.com" className="capitalize">contact</a>
 
@@ -82,7 +83,7 @@ export function ShortBio() {
 
 			</h2>
 			<p className=" font-alltext text-sm lg:text-lg text-slate-900 dark:text-slate-300"> I am a student at the Malawi univerisity of business and applied science. I am pursuing a  Bachelors degree in Information Technology.
-				I am a minimalist and a linux fan who recently survived a <a className="hover:underline text-slate-400" target="_blank" href="https://www.reddit.com/r/unixporn/comments/3iy3wd/stupid_question_what_is_ricing/">ricing</a> addiction. I write code as an excuse to use vim.<a href="https://archlinux.org/" className=" hover:underline text-slate-400">Arch-linux(btw) </a>,<a href="https://neovim.io/" className=" hover:underline  text-slate-400">Neovim</a>,<a href="https://github.com/kovidgoyal/kitty" className="text-slate-400 hover:underline">Kitty</a>, <a href="https://github.com/zellij-org/zellij" className="hover:underline text-slate-400">zellij</a> and <a href="https://github.com/zellij-org/zellij" className="hover:underline text-slate-400">i3 supremancy</a></p>
+				I am a minimalist and a linux fan who recently survived a <a className="hover:underline text-slate-800  dark:text-slate-400" target="_blank" href="https://www.reddit.com/r/unixporn/comments/3iy3wd/stupid_question_what_is_ricing/">ricing</a> addiction. I write code as an excuse to use vim.<a href="https://archlinux.org/" className=" hover:underline text-blue-800 dark:text-slate-400">Arch-linux(btw) </a>,<a href="https://neovim.io/" className=" hover:underline text-green-800  dark:text-slate-400">Neovim</a>,<a href="https://github.com/kovidgoyal/kitty" className="dark:text-slate-400 text-pink-800   hover:underline">Kitty</a>, <a href="https://github.com/zellij-org/zellij" className="hover:underline text-orange-800 dark:text-slate-400">zellij</a> and <a href="https://github.com/zellij-org/zellij" className="hover:underline text-purple-800 dark:text-slate-400">i3 supremancy</a></p>
 		</section>
 	)
 
@@ -104,7 +105,7 @@ export function Card() {
 		<>
 			<section className="border  rounded-md md:flex hidden">
 				<section className="flex flex-col flex-1  p-4">
-					<Link href="/" className="lg:text-xl text-md text-emerald-300 hover:underline">Choosing an editor</Link>
+					<Link href="/" className="lg:text-xl text-md dark:text-emerald-300 text-emerald-900 hover:underline">Choosing an editor</Link>
 					<p className="text-slate-500 text-xs lg:text-sm">2025-03-04</p>
 					<p className="text-sm lg:text-md">The person should be able to fit in the world</p>
 					<p className="text-slate-500 italic text-xs ">2 min read</p>
@@ -165,11 +166,11 @@ const ThemeSwitch = () => {
 		console.log(systemTheme, theme, currentTheme)
 	}, []);
 	return mount ? (
-		<div className="fixed right-5 z-[10000000000] max-lg:bottom-2.5 lg:top-1/3">
+		<div className="z-[10000000000]   ">
 			<button
 				onClick={() => { setTheme(currentTheme === "dark" ? "light" : "dark"); console.log(currentTheme) }}
 				type="button"
-				className="flex h-10 w-10 p-2 items-center justify-center rounded-md border border-gray-800 text-gray-800 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:border-slate-300 dark:text-white"
+				className="flex h-8 w-8 p-2 items-center justify-center rounded-md  text-gray-800 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:border-slate-300 dark:text-white"
 			>
 				<svg
 					className="dark:hidden"

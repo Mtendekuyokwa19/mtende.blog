@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <main
-            className={`${maven.variable} ${inter.variable} ${rowdies.variable} antialiased flex    flex-col justify-center items-center`}
+            className={`${maven.variable} ${inter.variable} ${rowdies.variable} antialiased flex dark:bg-black   bg-[#fafafa] flex-col justify-center items-center`}
           >
             <Navbar />
             {children}

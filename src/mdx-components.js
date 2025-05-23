@@ -16,7 +16,9 @@ export function useMDXComponents(components) {
       <mark className="bg-stone-800 text-pink-500"> {children}</mark>
     ),
     p: ({ children }) => (
-      <p className="text-slate-400 md:w-1/2 w-11/12 text-justify">{children}</p>
+      <p className="dark:text-slate-400 text-slate-700  md:w-1/2 w-11/12 text-justify">
+        {children}
+      </p>
     ),
     h2: ({ children }) => {
       const anchor = getAnchor(children);
@@ -26,14 +28,14 @@ export function useMDXComponents(components) {
           id={anchor}
           className=" font-bold text-left  text-xl w-11/12 md:w-1/2 md:my-3 my-1 hover:underline "
         >
+          {children}
           <a
             target="_blank"
             href={link}
-            className="anchor-link text-green-300  "
+            className="anchor-link mx-7 text-green-300  "
           >
             #
           </a>
-          {children}
         </h2>
       );
     },
