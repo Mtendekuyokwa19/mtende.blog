@@ -151,7 +151,7 @@ function generateRSS() {
   }
 
   // Write RSS feed to public directory
-  const rssPath = path.join(publicDir, "rss.xml");
+  const rssPath = path.join(publicDir, "feed.xml");
   fs.writeFileSync(rssPath, feed.xml({ indent: true }));
 
   console.log(`RSS feed generated successfully at ${rssPath}!`);

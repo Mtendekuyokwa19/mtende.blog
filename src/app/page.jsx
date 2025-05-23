@@ -27,7 +27,7 @@ export function Navbar() {
 			<h1 className="md:text-3xl  text-md font-bold"><a href="/">Mtende</a><span className="text-emerald-400 ">.</span></h1>
 
 			<div className="flex justify-center items-center md:gap-6 gap-2">
-				<a href="">
+				<a href="/feed.xml/">
 
 					<BsRssFill className="w-5" />
 				</a>
