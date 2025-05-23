@@ -36,8 +36,15 @@ const geistMono = Geist_Mono({
 const metadata = {
   title: "Mtende's thoughts",
   description: "Mtende's Blog' ",
+  icons: {
+    icon: [
+      {
+        url: "/finn.jpg",
+        href: "/finn.jpg",
+      },
+    ],
+  },
 };
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>

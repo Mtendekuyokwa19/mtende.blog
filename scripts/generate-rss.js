@@ -34,7 +34,10 @@ function convertMdxToHtml(content) {
     .replace(/^export\s+.*$/gm, "")
     .replace(/<[^>]*>/g, ""); // Remove JSX tags
 
-  // Convert markdown to HTML
+  // Remove images completely (no images in RSS feed)
+  cleanContent = cleanContent.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, "");
+
+  // Convert markdown to HTML following the exact specifications
   let htmlContent = cleanContent
     // Convert headers (order matters - start with h6 and work up)
     .replace(/^######\s+(.+)$/gm, "<h6>$1</h6>")
@@ -44,10 +47,16 @@ function convertMdxToHtml(content) {
     .replace(/^##\s+(.+)$/gm, "<h2>$1</h2>")
     .replace(/^#\s+(.+)$/gm, "<h1>$1</h1>")
 
-    // Convert bold and italic
+    // Convert strikethrough
+    .replace(/~~([^~]+)~~/g, "<del>$1</del>")
+
+    // Convert bold and italic (handle ** and __ for bold, * and _ for italic)
     .replace(/\*\*\*([^*]+)\*\*\*/g, "<strong><em>$1</em></strong>")
+    .replace(/___([^_]+)___/g, "<strong><em>$1</em></strong>")
     .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+    .replace(/__([^_]+)__/g, "<strong>$1</strong>")
     .replace(/\*([^*]+)\*/g, "<em>$1</em>")
+    .replace(/_([^_]+)_/g, "<em>$1</em>")
 
     // Convert inline code
     .replace(/`([^`]+)`/g, "<code>$1</code>")
@@ -60,15 +69,12 @@ function convertMdxToHtml(content) {
     // Convert links
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
 
-    // Convert images
-    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" />')
-
-    // Handle blockquotes
-    .replace(/^>\s+(.+)$/gm, "<blockquote><p>$1</p></blockquote>")
+    // Handle blockquotes (simple format, no nested <p> tags)
+    .replace(/^>\s+(.+)$/gm, "<blockquote>$1</blockquote>")
 
     // Convert horizontal rules
-    .replace(/^---$/gm, "<hr />")
-    .replace(/^\*\*\*$/gm, "<hr />")
+    .replace(/^---$/gm, "<hr>")
+    .replace(/^\*\*\*$/gm, "<hr>")
 
     // Convert lists - handle nested structure
     .replace(/^(\s*)[-*+]\s+(.+)$/gm, "$1<li>$2</li>")
@@ -91,7 +97,7 @@ function convertMdxToHtml(content) {
         processedLines.push(`<${listType}>`);
         inList = true;
       }
-      processedLines.push(line);
+      processedLines.push("  " + line);
     } else {
       if (inList) {
         processedLines.push(`</${listType}>`);
@@ -105,10 +111,10 @@ function convertMdxToHtml(content) {
         !line.startsWith("<pre>") &&
         !line.startsWith("<blockquote>") &&
         !line.startsWith("<hr") &&
-        !line.startsWith("<img") &&
         !line.startsWith("<ul>") &&
         !line.startsWith("<ol>") &&
-        !line.startsWith("</")
+        !line.startsWith("</") &&
+        !line.startsWith("<code>")
       ) {
         processedLines.push(`<p>${line}</p>`);
       } else if (line) {

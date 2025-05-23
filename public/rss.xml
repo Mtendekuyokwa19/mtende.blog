@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title><![CDATA[Mtende's Blog]]></title>
-        <description><![CDATA[A blog by Mtende Kuyokwa - Student, Developer, and Linux enthusiast]]></description>
+        <description><![CDATA[Recent content on Mtende's Site]]></description>
         <link>https://mtende-blog.vercel.app</link>
-        <generator>Custom RSS Generator</generator>
-        <lastBuildDate>Fri, 23 May 2025 16:13:37 GMT</lastBuildDate>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Fri, 23 May 2025 16:23:07 GMT</lastBuildDate>
         <atom:link href="https://mtende-blog.vercel.app/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 23 May 2025 16:13:37 GMT</pubDate>
+        <pubDate>Fri, 23 May 2025 16:23:07 GMT</pubDate>
         <copyright><![CDATA[2025 Mtende Kuyokwa]]></copyright>
         <language><![CDATA[en]]></language>
-        <managingEditor><![CDATA[mtende@example.com (Mtende Kuyokwa)]]></managingEditor>
-        <webMaster><![CDATA[mtende@example.com (Mtende Kuyokwa)]]></webMaster>
         <ttl>60</ttl>
         <item>
             <title><![CDATA[The Boy by Ryn Dahl - Book Review]]></title>
@@ -19,31 +17,37 @@
             <guid isPermaLink="false">https://mtende-blog.vercel.app/anotherpage</guid>
             <dc:creator><![CDATA[Mtende Kuyokwa]]></dc:creator>
             <pubDate>Fri, 23 May 2025 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h1>Your content here...</h1>
-<h1>📖 <em>The Boy</em> by Ryn Dahl</h1>
-<p>!<a href="https://example.com/the-boy-cover.jpg">Book Cover</a></p>
-<p>> <em>"Sometimes, the quietest voices echo the loudest truths."</em>  <br>> — Ryn Dahl, <em>The Boy</em></p>
-<h2>Introduction</h2>
-<em>The Boy</em> by <strong>Ryn Dahl</strong> is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.
-<h2>Impact</h2>
-<em>The Boy</em> by <strong>Ryn Dahl</strong> is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.
-<h2>Game</h2>
-<em>The Boy</em> by <strong>Ryn Dahl</strong> is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.
-<h2>tap</h2>
-<em>The Boy</em> by <strong>Ryn Dahl</strong> is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.
-<h2>Introduction</h2>
-<em>The Boy</em> by <strong>Ryn Dahl</strong> is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.
-<p>---</p>
-<h2>🌟 Key Themes</h2>
-<ol><li><strong>Silence and Expression</strong></li>
-<li><strong>Innocence vs. Experience</strong></li>
-<li><strong>Family and Identity</strong></li>
-<li><strong>Nature as Healing</strong></li></ol>
-<p>Each theme is interwoven into the narrative, enriching the reader’s understanding of the protagonist’s internal conflict.</p>
-<p>---</p>
-<h2>🧑‍💻 Character Sketch</h2>
-<h3><code>The Boy</code> (Protagonist)</h3>
-<p>```plaintext<br>Name: Unnamed<br>Age: 9<br>Traits: Observant, Sensitive, Imaginative</p>]]></content:encoded>
+            <content:encoded><![CDATA[&lt;h1&gt;Your content here...&lt;/h1&gt;
+&lt;h1&gt;📖 &lt;em&gt;The Boy&lt;/em&gt; by Ryn Dahl&lt;/h1&gt;
+&lt;p&gt;!&lt;a href=&quot;https://example.com/the-boy-cover.jpg&quot;&gt;Book Cover&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;em&gt;&quot;Sometimes, the quietest voices echo the loudest truths.&quot;&lt;/em&gt;  &lt;/p&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;&lt;p&gt;— Ryn Dahl, &lt;em&gt;The Boy&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;The Boy&lt;/em&gt; by &lt;strong&gt;Ryn Dahl&lt;/strong&gt; is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.&lt;/p&gt;
+&lt;h2&gt;Impact&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;The Boy&lt;/em&gt; by &lt;strong&gt;Ryn Dahl&lt;/strong&gt; is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.&lt;/p&gt;
+&lt;h2&gt;Game&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;The Boy&lt;/em&gt; by &lt;strong&gt;Ryn Dahl&lt;/strong&gt; is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.&lt;/p&gt;
+&lt;h2&gt;tap&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;The Boy&lt;/em&gt; by &lt;strong&gt;Ryn Dahl&lt;/strong&gt; is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.&lt;/p&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;The Boy&lt;/em&gt; by &lt;strong&gt;Ryn Dahl&lt;/strong&gt; is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;🌟 Key Themes&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Silence and Expression&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Innocence vs. Experience&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Family and Identity&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nature as Healing&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Each theme is interwoven into the narrative, enriching the reader’s understanding of the protagonist’s internal conflict.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;🧑‍💻 Character Sketch&lt;/h2&gt;
+&lt;h3&gt;&lt;code&gt;The Boy&lt;/code&gt; (Protagonist)&lt;/h3&gt;
+&lt;p&gt;```plaintext&lt;/p&gt;
+&lt;p&gt;Name: Unnamed&lt;/p&gt;
+&lt;p&gt;Age: 9&lt;/p&gt;
+&lt;p&gt;Traits: Observant, Sensitive, Imaginative&lt;/p&gt;]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[The Boy by Ryn Dahl - Book Review]]></title>
@@ -52,33 +56,40 @@
             <guid isPermaLink="false">https://mtende-blog.vercel.app/mdx-page</guid>
             <dc:creator><![CDATA[Mtende Kuyokwa]]></dc:creator>
             <pubDate>Fri, 23 May 2025 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h1>Your content here...</h1>
-<h1>📖 <em>The Boy</em> by Ryn Dahl</h1>
-<p>!<a href="/finn.jpg">alt text</a></p>
-<h2>Introduction  </h2>
-<em>The Boy</em> by <strong>Ryn Dahl</strong> is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.
-<p>> <em>"Sometimes, the quietest voices echo the loudest truths."</em>  <br>> — Ryn Dahl, <em>The Boy</em></p>
-<h2>Impact</h2>
-<em>The Boy</em> by <strong>Ryn Dahl</strong> is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.
-<h2>Game</h2>
-<em>The Boy</em> by <strong>Ryn Dahl</strong> is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.
-<a href="#introduction">introduction</a> 
-<h2>tap</h2>
-<a href="https://google.com">swinger</a> 
-<em>The Boy</em> by <strong>Ryn Dahl</strong> is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.
-<h2>Introduction</h2>
-<em>The Boy</em> by <strong>Ryn Dahl</strong> is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.
-<p>---</p>
-<h2>🌟 Key Themes</h2>
-<ol><li><strong>Silence and Expression</strong></li>
-<li><strong>Innocence vs. Experience</strong></li>
-<li><strong>Family and Identity</strong></li>
-<li><strong>Nature as Healing</strong></li></ol>
-<p>Each theme is interwoven into the narrative, enriching the reader’s understanding of the protagonist’s internal conflict.</p>
-<p>---</p>
-<h2>🧑‍💻 Character Sketch</h2>
-<p>``<code><br>int main(){</p>
-<p>2025-05-23T08:27:18<br>count>>lisa>>endl;<br></code>``<br>The value of a dollar</p>]]></content:encoded>
+            <content:encoded><![CDATA[&lt;h1&gt;Your content here...&lt;/h1&gt;
+&lt;h1&gt;📖 &lt;em&gt;The Boy&lt;/em&gt; by Ryn Dahl&lt;/h1&gt;
+&lt;p&gt;!&lt;a href=&quot;/finn.jpg&quot;&gt;alt text&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Introduction  &lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;The Boy&lt;/em&gt; by &lt;strong&gt;Ryn Dahl&lt;/strong&gt; is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;em&gt;&quot;Sometimes, the quietest voices echo the loudest truths.&quot;&lt;/em&gt;  &lt;/p&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;&lt;p&gt;— Ryn Dahl, &lt;em&gt;The Boy&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2&gt;Impact&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;The Boy&lt;/em&gt; by &lt;strong&gt;Ryn Dahl&lt;/strong&gt; is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.&lt;/p&gt;
+&lt;h2&gt;Game&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;The Boy&lt;/em&gt; by &lt;strong&gt;Ryn Dahl&lt;/strong&gt; is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;#introduction&quot;&gt;introduction&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;tap&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://google.com&quot;&gt;swinger&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The Boy&lt;/em&gt; by &lt;strong&gt;Ryn Dahl&lt;/strong&gt; is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.&lt;/p&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;The Boy&lt;/em&gt; by &lt;strong&gt;Ryn Dahl&lt;/strong&gt; is a compelling literary novel that explores the inner world of a young child grappling with trauma, memory, and resilience. Set in a small coastal town, the story unfolds with poetic language and subtle emotional depth, taking readers on an introspective journey. Dahl creates a character whose silence speaks volumes, challenging the reader to interpret what remains unspoken.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;🌟 Key Themes&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Silence and Expression&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Innocence vs. Experience&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Family and Identity&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nature as Healing&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Each theme is interwoven into the narrative, enriching the reader’s understanding of the protagonist’s internal conflict.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;🧑‍💻 Character Sketch&lt;/h2&gt;
+&lt;p&gt;``&lt;code&gt;&lt;/p&gt;
+&lt;p&gt;int main(){&lt;/p&gt;
+&lt;p&gt;2025-05-23T08:27:18&lt;/p&gt;
+&lt;p&gt;count&gt;&gt;lisa&gt;&gt;endl;&lt;/p&gt;
+&lt;/code&gt;``
+&lt;p&gt;The value of a dollar&lt;/p&gt;]]></content:encoded>
         </item>
     </channel>
 </rss>
