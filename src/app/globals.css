@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
+	--mini-codebg: #141b1e;
+	--mini-codefg: #82185d;
 }
 
 
@@ -16,16 +16,8 @@
 	--font-alltext: var(--font-maven-pro)
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
-}
 
 body {
-	background: var(--background);
-	color: var(--foreground);
 	font-family: "Maven Pro", sans-serif;
 }
 
@@ -45,4 +37,13 @@ body>pre {
 	display: block;
 	width: 50%;
 
+}
+
+
+p:has(img) {
+
+	display: flex;
+	justify-items: center;
+	align-items: center;
+	flex-direction: column;
 }
