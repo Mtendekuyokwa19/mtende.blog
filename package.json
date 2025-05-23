@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
   "build:rss": "node scripts/generate-rss.js",
-    "build": "npm run build:rss && next build"
+    "build": "npm run build:rss && next build",
     "start": "next start",
     "lint": "next lint"
   },
