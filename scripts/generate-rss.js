@@ -26,22 +26,26 @@ function findMDXFiles(dir, fileList = []) {
   return fileList;
 }
 
-// Function to convert MDX content to HTML for RSS
+// Function to convert MDX content to clean HTML for RSS
 function convertMdxToHtml(content) {
-  // Remove import statements
-  let htmlContent = content.replace(/^import\s+.*$/gm, "");
+  // Remove import statements and JSX components
+  let cleanContent = content
+    .replace(/^import\s+.*$/gm, "")
+    .replace(/^export\s+.*$/gm, "")
+    .replace(/<[^>]*>/g, ""); // Remove JSX tags
 
-  // Convert markdown to basic HTML
-  htmlContent = htmlContent
-    // Convert headers
-    .replace(/^#{6}\s+(.+)$/gm, "<h6>$1</h6>")
-    .replace(/^#{5}\s+(.+)$/gm, "<h5>$1</h5>")
-    .replace(/^#{4}\s+(.+)$/gm, "<h4>$1</h4>")
-    .replace(/^#{3}\s+(.+)$/gm, "<h3>$1</h3>")
-    .replace(/^#{2}\s+(.+)$/gm, "<h2>$1</h2>")
-    .replace(/^#{1}\s+(.+)$/gm, "<h1>$1</h1>")
+  // Convert markdown to HTML
+  let htmlContent = cleanContent
+    // Convert headers (order matters - start with h6 and work up)
+    .replace(/^######\s+(.+)$/gm, "<h6>$1</h6>")
+    .replace(/^#####\s+(.+)$/gm, "<h5>$1</h5>")
+    .replace(/^####\s+(.+)$/gm, "<h4>$1</h4>")
+    .replace(/^###\s+(.+)$/gm, "<h3>$1</h3>")
+    .replace(/^##\s+(.+)$/gm, "<h2>$1</h2>")
+    .replace(/^#\s+(.+)$/gm, "<h1>$1</h1>")
 
     // Convert bold and italic
+    .replace(/\*\*\*([^*]+)\*\*\*/g, "<strong><em>$1</em></strong>")
     .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
     .replace(/\*([^*]+)\*/g, "<em>$1</em>")
 
@@ -49,74 +53,91 @@ function convertMdxToHtml(content) {
     .replace(/`([^`]+)`/g, "<code>$1</code>")
 
     // Convert code blocks
-    .replace(/```(\w+)?\n([\s\S]*?)```/g, "<pre><code>$2</code></pre>")
+    .replace(/```(\w+)?\s*\n([\s\S]*?)\n```/g, (match, lang, code) => {
+      return `<pre><code${lang ? ` class="language-${lang}"` : ""}>${code.trim()}</code></pre>`;
+    })
 
     // Convert links
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
 
-    // Convert unordered lists
-    .replace(/^\s*[-*+]\s+(.+)$/gm, "<li>$1</li>")
-    .replace(/(<li>.*<\/li>)/s, "<ul>$1</ul>")
+    // Convert images
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" />')
 
-    // Convert ordered lists
-    .replace(/^\s*\d+\.\s+(.+)$/gm, "<li>$1</li>")
-    .replace(/(<li>.*<\/li>)/s, "<ol>$1</ol>")
+    // Handle blockquotes
+    .replace(/^>\s+(.+)$/gm, "<blockquote><p>$1</p></blockquote>")
 
-    // Convert line breaks to paragraphs
-    .split("\n\n")
-    .map((paragraph) => {
-      paragraph = paragraph.trim();
-      if (paragraph && !paragraph.startsWith("<")) {
-        return `<p>${paragraph.replace(/\n/g, "<br>")}</p>`;
+    // Convert horizontal rules
+    .replace(/^---$/gm, "<hr />")
+    .replace(/^\*\*\*$/gm, "<hr />")
+
+    // Convert lists - handle nested structure
+    .replace(/^(\s*)[-*+]\s+(.+)$/gm, "$1<li>$2</li>")
+    .replace(/^(\s*)\d+\.\s+(.+)$/gm, "$1<li>$2</li>");
+
+  // Process paragraphs and lists
+  const lines = htmlContent.split("\n");
+  const processedLines = [];
+  let inList = false;
+  let listType = null;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+
+    if (line.startsWith("<li>")) {
+      if (!inList) {
+        // Determine list type based on original markdown
+        const originalLine = cleanContent.split("\n")[i];
+        listType = /^\s*\d+\./.test(originalLine) ? "ol" : "ul";
+        processedLines.push(`<${listType}>`);
+        inList = true;
       }
-      return paragraph;
-    })
-    .join("\n")
+      processedLines.push(line);
+    } else {
+      if (inList) {
+        processedLines.push(`</${listType}>`);
+        inList = false;
+        listType = null;
+      }
 
-    // Clean up extra whitespace
-    .replace(/\n\s*\n/g, "\n")
-    .trim();
-
-  return htmlContent;
-}
-
-// Function to create a clean description from content
-function createDescription(content, frontmatterDescription) {
-  if (frontmatterDescription) {
-    return frontmatterDescription;
+      if (
+        line &&
+        !line.startsWith("<h") &&
+        !line.startsWith("<pre>") &&
+        !line.startsWith("<blockquote>") &&
+        !line.startsWith("<hr") &&
+        !line.startsWith("<img") &&
+        !line.startsWith("<ul>") &&
+        !line.startsWith("<ol>") &&
+        !line.startsWith("</")
+      ) {
+        processedLines.push(`<p>${line}</p>`);
+      } else if (line) {
+        processedLines.push(line);
+      }
+    }
   }
 
-  // Extract plain text for description
-  const plainText = content
-    .replace(/^import\s+.*$/gm, "")
-    .replace(/#{1,6}\s+/g, "")
-    .replace(/\*\*([^*]+)\*\*/g, "$1")
-    .replace(/\*([^*]+)\*/g, "$1")
-    .replace(/`([^`]+)`/g, "$1")
-    .replace(/```[\s\S]*?```/g, "")
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
-    .replace(/^\s*[-*+]\s+/gm, "")
-    .replace(/^\s*\d+\.\s+/gm, "")
-    .replace(/\n+/g, " ")
-    .trim();
+  if (inList) {
+    processedLines.push(`</${listType}>`);
+  }
 
-  return plainText.substring(0, 160) + (plainText.length > 160 ? "..." : "");
+  return processedLines.join("\n").replace(/\n\n+/g, "\n").trim();
 }
 
 function generateRSS() {
+  // Create RSS feed with proper structure matching Joshua's
   const feed = new RSS({
     title: "Mtende's Blog",
-    description:
-      "A blog by Mtende Kuyokwa - Student, Developer, and Linux enthusiast",
+    description: "Recent content on Mtende's Site",
     site_url: "https://mtende-blog.vercel.app",
     feed_url: "https://mtende-blog.vercel.app/rss.xml",
     copyright: `${new Date().getFullYear()} Mtende Kuyokwa`,
     language: "en",
     pubDate: new Date(),
     ttl: 60,
-    managingEditor: "mtende@example.com (Mtende Kuyokwa)",
-    webMaster: "mtende@example.com (Mtende Kuyokwa)",
-    generator: "Custom RSS Generator",
+    custom_namespaces: {
+      content: "http://purl.org/rss/1.0/modules/content/",
+    },
   });
 
   // Get all MDX files from src/app directory recursively
@@ -130,8 +151,8 @@ function generateRSS() {
         const fileContents = fs.readFileSync(filePath, "utf8");
         const { data, content } = matter(fileContents);
 
-        // Skip files without titles or that are not blog posts
-        if (!data.title || !content.trim()) {
+        // Skip files without titles
+        if (!data.title) {
           return null;
         }
 
@@ -144,15 +165,20 @@ function generateRSS() {
         if (slug.endsWith("/")) {
           slug = slug.slice(0, -1);
         }
-        if (slug === "") {
-          slug = "home";
+        if (slug === "" || slug === "page") {
+          return null; // Skip home page
         }
 
         // Convert content to HTML
         const htmlContent = convertMdxToHtml(content);
 
-        // Create a clean description
-        const description = createDescription(content, data.description);
+        // Create description from content if not provided
+        const description =
+          data.description ||
+          content
+            .replace(/[#*_`]/g, "")
+            .substring(0, 160)
+            .trim() + "...";
 
         return {
           title: data.title,
@@ -162,8 +188,6 @@ function generateRSS() {
           author: data.author || "Mtende Kuyokwa",
           slug,
           categories: data.tags || data.categories || [],
-          filePath: relativePath,
-          ...data,
         };
       } catch (error) {
         console.error(`Error processing file ${filePath}:`, error.message);
@@ -171,39 +195,29 @@ function generateRSS() {
       }
     })
     .filter((post) => post !== null)
-    .sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by date, newest first
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   console.log(`Processing ${posts.length} valid posts`);
 
   posts.forEach((post) => {
-    const postUrl =
-      post.slug === "home"
-        ? "https://mtende-blog.vercel.app"
-        : `https://mtende-blog.vercel.app/${post.slug}`;
-
-    // Format the date properly for RSS
-    const pubDate = post.date instanceof Date ? post.date : new Date(post.date);
+    const postUrl = `https://mtende-blog.vercel.app/${post.slug}`;
 
     feed.item({
       title: post.title,
       description: post.description,
       url: postUrl,
-      guid: postUrl, // Use URL as GUID for uniqueness
-      date: pubDate,
+      guid: postUrl,
+      date: post.date,
       author: post.author,
-      categories: Array.isArray(post.categories) ? post.categories : [],
+      categories: post.categories,
       custom_elements: [
         {
-          "content:encoded": {
-            _cdata: post.content,
-          },
+          "content:encoded": post.content,
         },
       ],
     });
 
-    console.log(
-      `Added to RSS: ${post.title} -> ${postUrl} (${pubDate.toISOString()})`,
-    );
+    console.log(`Added to RSS: ${post.title}`);
   });
 
   // Ensure public directory exists
@@ -212,8 +226,16 @@ function generateRSS() {
     fs.mkdirSync(publicDir, { recursive: true });
   }
 
-  // Generate the RSS XML
-  const rssXml = feed.xml({ indent: true });
+  // Generate RSS XML
+  let rssXml = feed.xml({ indent: true });
+
+  // Fix the content:encoded CDATA wrapping to match Joshua's format
+  rssXml = rssXml.replace(
+    /<content:encoded>([\s\S]*?)<\/content:encoded>/g,
+    (match, content) => {
+      return `<content:encoded><![CDATA[${content}]]></content:encoded>`;
+    },
+  );
 
   // Write RSS feed to public directory
   const rssPath = path.join(publicDir, "rss.xml");
@@ -221,10 +243,6 @@ function generateRSS() {
 
   console.log(`RSS feed generated successfully at ${rssPath}!`);
   console.log(`Feed contains ${posts.length} items`);
-
-  // Log first few lines of generated XML for verification
-  console.log("\nFirst few lines of generated RSS:");
-  console.log(rssXml.split("\n").slice(0, 10).join("\n"));
 }
 
 // Run the generator
