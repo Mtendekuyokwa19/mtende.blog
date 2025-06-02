@@ -1,4 +1,5 @@
 "use client";
+import { Analytics } from "@vercel/analytics/next";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import { ThemeProvider as NextThemesProvider } from "next-themes";
@@ -53,6 +54,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Analytics />
           <main
             className={`${maven.variable} ${inter.variable} ${rowdies.variable} antialiased flex dark:bg-[#1c2225] dark:text-[#D3C6AA] text-[#232A2E]  bg-[#D3C6AA] flex-col justify-center items-center`}
           >
