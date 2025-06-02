@@ -16,7 +16,7 @@ export function useMDXComponents(components) {
       <mark className="bg-stone-800 text-pink-500"> {children}</mark>
     ),
     p: ({ children }) => (
-      <p className="dark:text-slate-400 text-slate-700  md:w-1/2 w-11/12 text-justify">
+      <p className="dark:text-slate-400 text-slate-700  md:w-1/2 w-11/12 text-justify my-2">
         {children}
       </p>
     ),
@@ -68,8 +68,8 @@ export function useMDXComponents(components) {
       <Image
         src={src}
         alt={alt}
-        width={0}
-        height={0}
+        width={1040}
+        height={1040}
         className="w-1/2 my-7 flex justify-center  items-center"
       />
     ),

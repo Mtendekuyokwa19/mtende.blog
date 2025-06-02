@@ -113,7 +113,7 @@ export function Card({ title, date, description, image, link, time, timetoread }
 
 				</section>
 
-				<section className="   rounded-md"><Image className="rounded p-3" alt="Image of finn" src={"/" + image} width={150} height={150} /> </section>
+				<section className="   rounded-md"><Image unoptimized={true} className="rounded p-3" alt="Image of finn" src={"/" + image} width={150} height={150} /> </section>
 			</section>
 
 			<section className="flex md:hidden overflow-hidden border border-slate-600 rounded-md h-28 ">
@@ -121,7 +121,7 @@ export function Card({ title, date, description, image, link, time, timetoread }
 					<section className="flex backdrop-blur-lg rounded-md">
 						<div className="flex p-2 gap-4">
 							<div className="flex justify-center items-center">
-								<Image src={"/" + image} height={0} width={0} alt="image blog" className="w-24 rounded-md" />
+								<Image src={"/" + image} height={150} width={150} alt="image blog" className="h-24 rounded-md" />
 
 							</div>
 							<div className="flex gap-1 font-Quicksand justify-center items-start flex-col ">
@@ -139,8 +139,8 @@ export function Card({ title, date, description, image, link, time, timetoread }
 
 }
 
-const newpost = new Blog("finn.jpg", "Man on the moon", "33-may-4007", "the art of discovering", "4", "mdx-page", "4")
-const posts = [newpost, newpost, newpost, newpost, newpost, newpost, newpost, newpost, newpost, newpost, newpost, newpost, newpost, newpost]
+const health_as_a_dev = new Blog("health-as-a-dev.jpg", "health as a  dev", "02-June-2025", "A guide on improving one's health as a dev.", "2", "health-as-a-dev", "2")
+const posts = [health_as_a_dev]
 export function BlogPosts() {
 
 	let cards = [];
