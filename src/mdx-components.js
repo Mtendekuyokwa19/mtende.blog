@@ -70,7 +70,7 @@ export function useMDXComponents(components) {
         alt={alt}
         width={1040}
         height={1040}
-        className="w-1/2 my-7 flex justify-center  items-center"
+        className="w-3/4  my-7 flex justify-center  items-center"
       />
     ),
     ...components,
