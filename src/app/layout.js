@@ -49,12 +49,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/finn.jpg" sizes="any" />
       </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <main
-            className={`${maven.variable} ${inter.variable} ${rowdies.variable} antialiased flex dark:bg-black   bg-[#fafafa] flex-col justify-center items-center`}
+            className={`${maven.variable} ${inter.variable} ${rowdies.variable} antialiased flex dark:bg-[#1c2225] dark:text-[#D3C6AA] text-[#232A2E]  bg-[#D3C6AA] flex-col justify-center items-center`}
           >
             <Navbar />
             {children}

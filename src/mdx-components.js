@@ -32,7 +32,7 @@ export function useMDXComponents(components) {
           <a
             target="_blank"
             href={link}
-            className="anchor-link mx-7 text-green-300  "
+            className="anchor-link mx-7 text-green-900 dark:text-green-300 underline-offset-8 "
           >
             #
           </a>
@@ -57,7 +57,10 @@ export function useMDXComponents(components) {
       </blockquote>
     ),
     a: ({ href, children }) => (
-      <a href={href} className="text-green-300">
+      <a
+        href={href}
+        className="dark:text-green-300 text-green-900 underline underline-offset-2"
+      >
         {children.toString()}
       </a>
     ),
