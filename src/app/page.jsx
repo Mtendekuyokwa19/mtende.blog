@@ -225,14 +225,27 @@ const health_as_a_dev = new Blog(
 
 const a_rant_on_escaping_monotony = new Blog(
   "gdscript.jpg",
-  "a rant on escaping monotony",
+  "escaping monotony",
   "11-June-2025",
   "A rant on how I escaped monotony",
   "2",
   "escaping-monotony",
   "3"
 );
-const posts = [health_as_a_dev, a_rant_on_escaping_monotony];
+const batteries_vs_no_batteries = new Blog(
+  "gdscript.jpg",
+  "batteries and buildings",
+  "1-July-2025",
+  "advantages and disadvantages of framework classes",
+  "2",
+  "batteries-vs-no-batteries",
+  "3"
+);
+const posts = [
+  batteries_vs_no_batteries,
+  a_rant_on_escaping_monotony,
+  health_as_a_dev,
+];
 export function BlogPosts() {
   let cards = [];
   for (let i = 0; i < posts.length; i++) {
