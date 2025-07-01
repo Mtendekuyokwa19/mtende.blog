@@ -233,7 +233,7 @@ const a_rant_on_escaping_monotony = new Blog(
   "3"
 );
 const batteries_vs_no_batteries = new Blog(
-  "gdscript.jpg",
+  "batteries.jpg",
   "batteries and buildings",
   "1-July-2025",
   "advantages and disadvantages of framework classes",
