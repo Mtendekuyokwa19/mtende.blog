@@ -30,7 +30,6 @@ export function useMDXComponents(components) {
         >
           {children}
           <a
-            target="_blank"
             href={link}
             className="anchor-link mx-7 text-green-900 dark:text-green-300 underline-offset-8 "
           >
