@@ -189,7 +189,7 @@ export function Card({
                   height={150}
                   width={150}
                   alt="image blog"
-                  className="h-24 rounded-md"
+                  className="h-24 hidden rounded-md"
                 />
               </div>
               <div className="flex gap-1 font-Quicksand justify-center items-start flex-col ">
