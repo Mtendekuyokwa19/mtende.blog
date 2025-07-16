@@ -1,17 +1,19 @@
 "use client";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 import {
+  BsArrowLeft,
+  BsBoxArrowInLeft,
   BsDiscord,
-  BsLinkedin,
   BsGithub,
+  BsLinkedin,
+  BsMailbox,
   BsMedium,
   BsRssFill,
   BsTwitter,
-  BsMailbox,
 } from "react-icons/bs";
 
 export default function Home() {
@@ -26,20 +28,24 @@ export default function Home() {
 export function Navbar() {
   return (
     <nav className="flex border-1 z-50  sticky top-1 backdrop-blur-md  border-slate-400 my-2 rounded-2xl font-sans w-4/5 justify-between lg:py-3 py-2 px-4 lg:px-8 items-center   ">
-      <h1 className="md:text-3xl  text-md font-bold">
+      <h1 title="Mtende header" className="md:text-3xl  text-md font-bold">
         <a href="/">Mtende</a>
         <span className="text-emerald-400 ">.</span>
       </h1>
 
       <div className="flex justify-center items-center md:gap-6 gap-2">
-        <a href="/feed.xml/">
-          <BsRssFill className="w-5" />
+        <a title="RssFeed" href="/feed.xml/">
+          <BsRssFill title="" className="w-5" />
         </a>
-        <a href="https://github.com/mtendekuyokwa19" target="_blank">
-          <BsGithub className="w-5" />
+        <a
+          title="Github"
+          href="https://github.com/mtendekuyokwa19"
+          target="_blank"
+        >
+          <BsGithub title="" className="w-5" />
         </a>
-        <a href="mailto:mtendekuyokwa19@gmail.com">
-          <BsMailbox className="w-5" />{" "}
+        <a title="Mailbox" href="mailto:mtendekuyokwa19@gmail.com">
+          <BsMailbox title="" className="w-5" />{" "}
         </a>
 
         <ThemeSwitch />
@@ -250,15 +256,16 @@ const batteries_vs_no_batteries = new Blog(
   "batteries-vs-no-batteries",
   "3",
 );
-const posts = [
+export const posts = [
   hackathons,
   batteries_vs_no_batteries,
   a_rant_on_escaping_monotony,
   health_as_a_dev,
 ];
-export function BlogPosts() {
+
+export function BlogPosts({ initializer = 0 }) {
   let cards = [];
-  for (let i = 0; i < posts.length; i++) {
+  for (let i = initializer; i < posts.length; i++) {
     cards.push(
       <Card
         key={i}
@@ -278,6 +285,24 @@ export function BlogPosts() {
         {cards}
       </section>
     </section>
+  );
+}
+
+export function Recommended() {
+  let number = Math.floor(Math.random() * (posts.length - 1));
+
+  return (
+    <div className="bg-[#a3be8c] w-42 text-black relative p-2">
+      <h4>
+        <Link
+          href={"/"}
+          className="flex font-bold justify-center gap-2 items-center "
+        >
+          <BsArrowLeft size={23} />
+          <span>Back to home</span>
+        </Link>
+      </h4>
+    </div>
   );
 }
 

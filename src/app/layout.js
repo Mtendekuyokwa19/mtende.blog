@@ -55,15 +55,16 @@ export default function RootLayout({ children }) {
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Analytics />
-          <main
-            className={`${maven.variable} ${inter.variable} ${rowdies.variable} antialiased flex dark:bg-[#1c2225] dark:text-[#D3C6AA] text-[#232A2E]  bg-[#D3C6AA] flex-col justify-center items-center`}
-          >
-            <div className="bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]">
+
+          <div className="     flex dark:bg-[#1c2225] dark:text-[#D3C6AA] text-[#232A2E]  bg-[#d8dee9] flex-col justify-center items-center  bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:39px_49px]">
+            <main
+              className={`${maven.variable} ${inter.variable} ${rowdies.variable} antialiased z-50 flex      flex-col justify-center items-center`}
+            >
               <Navbar />
               {children}
               <Footer />
-            </div>
-          </main>
+            </main>
+          </div>
         </ThemeProvider>
       </body>
     </html>
