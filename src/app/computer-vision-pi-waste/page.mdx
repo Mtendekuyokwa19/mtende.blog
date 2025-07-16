@@ -1,0 +1,33 @@
+# Computer-vision, pi3 and losing a hackathon
+
+[*2025-07-16*]
+
+![The great photo](/july.jpg)
+
+TL; DR. My team and I worked on a project that utilises computer vision, a Raspberry Pi 3, and builds a web app around these technologies to address waste management issues.
+
+We didn't win the hackathon for the project, and I don't want it to be forgotten, so here it is.
+
+# Project Overview
+
+The project is dissected into three compenents: Detection of illegal dumspites using AI, managing bin fill levels with ultrasonic sensor and pickup efficiency improvements using route optimization.
+
+Firstly, [the project](https://github.com/Mtendekuyokwa19/gaiathon) implementation of fill level used ultrasonic sensors connected to a raspberyy pi. Going the extra length, an addition of a MQ gas-sensor to grant bin collectors ability to separate the type of trash on colletion easily as they will be able to tell what type of trash is present in the bin by the gas emmision by the debris.The results of this were to be sent to the web app.
+
+Both the web app and the pi3 will share a database (Thanks to [sqlite-cloud](https://dashboard.sqlitecloud.io/) and flask for this)
+
+With all the bin points set up, a route optimisation technique using [Open route service](https://openrouteservice.org/) intergration to traverse pickup points with least fuel burn.
+
+Lastly, dumpiste detection using satellite images completes the project sandwich. Using Computer vision to detect dumpsites allows the city-council to notice patterns on how they are made and have a deeper understanding on waste management.
+
+The dumpisites were detected using the [Detectron2](https://detectron2.readthedocs.io/en/latest/tutorials/getting_started.html) (thanks meta). The problem with was training of the model using satellite images which were low quality. I personally struggled with this even when I was creating my dataset in [labelme](https://github.com/wkentaro/labelme).
+
+# Losing a hackathon
+
+What sucks more than losing a hackathon is losing 2 hackathons in one semester.
+The thing with hackathons that still drives me to show up despite the previous losses is the networking opportunity it brings.
+When one is alone in the creator's [monastery](https://en.wikipedia.org/wiki/Monastery), one is not able to see how high the bar of art that people can create in a short space. It makes you question your capability and re-evaluate your potential
+
+I saw projects that started late make it in time. Projects that started early rebuild the machine 3-4 times because they missed the architecture.
+All in all, it is something that somewhat breaks you and exposes you to how much humans can do under pressure, and I want to be part of such an
+environment every time.

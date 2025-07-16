@@ -220,7 +220,7 @@ const health_as_a_dev = new Blog(
   "A guide on improving one's health as a dev.",
   "2",
   "health-as-a-dev",
-  "2"
+  "2",
 );
 
 const a_rant_on_escaping_monotony = new Blog(
@@ -230,7 +230,16 @@ const a_rant_on_escaping_monotony = new Blog(
   "A rant on how I escaped monotony",
   "2",
   "escaping-monotony",
-  "3"
+  "3",
+);
+const hackathons = new Blog(
+  "july.jpg",
+  "losing hackthons",
+  "1-July-2025",
+  "computer-vision,pi3 and losing hackathons",
+  "2",
+  "computer-vision-pi-waste",
+  "3",
 );
 const batteries_vs_no_batteries = new Blog(
   "batteries.jpg",
@@ -239,9 +248,10 @@ const batteries_vs_no_batteries = new Blog(
   "advantages and disadvantages of framework classes",
   "2",
   "batteries-vs-no-batteries",
-  "3"
+  "3",
 );
 const posts = [
+  hackathons,
   batteries_vs_no_batteries,
   a_rant_on_escaping_monotony,
   health_as_a_dev,
@@ -258,7 +268,7 @@ export function BlogPosts() {
         timetoread={posts[i].timetoread}
         image={posts[i].image}
         link={posts[i].link}
-      />
+      />,
     );
   }
   return (
