@@ -241,7 +241,7 @@ const a_rant_on_escaping_monotony = new Blog(
 const hackathons = new Blog(
   "july.jpg",
   "losing hackthons",
-  "1-July-2025",
+  "16-July-2025",
   "computer-vision,pi3 and losing hackathons",
   "2",
   "computer-vision-pi-waste",
