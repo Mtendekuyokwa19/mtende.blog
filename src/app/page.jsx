@@ -263,7 +263,7 @@ const aJujutsuLater = new Blog(
   "30-July-2025",
   "An exploration on a new VCS tool",
   "2",
-  "stages-of-jujutsu",
+  "a-jujutsu-later",
   "3",
 );
 export const posts = [
