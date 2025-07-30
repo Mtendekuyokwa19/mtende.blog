@@ -2,52 +2,56 @@
 
 [*2025-07-30*]
 
-![a photo of a train station](/health-as-a-dev.jpg) 
+![a photo of a train station](/juju.jpg)
 
-**What does the next generation of version-control-system look like?** After being in rooms where people struggled to understand git to its core or even adopt it in their daily workflow *git might not be it*. 
+**What does the next generation of version-control-system look like...**
 
-Most people who "successed" with learning git, usually just know enough to get unstack and in extreme cases re-cloned the whole repository. Skill issue? **Maybe**  
+After being in rooms where people struggled to understand git to its core or even adopt it in their daily workflow _git might not be it_.
 
-But isn't technology supposed to bridge skill issue that is why it is "technology" 
+Most people who "successed" with learning git, usually just know enough commands to push to github or get unstack. But in extreme cases of being stuck the repo is re-cloned. Skill issue? **Maybe**
 
-## Skeptical 
+But isn't technology supposed to bridge skill issue that is why it is "technology"
+
+With git, we are in a state where most people simply parrot documentation and memorise a handfull of commands so much that they become second nature but most do not understand the metal and cannot justify why the internal design of the vcs is like that.
+
+I thought this was what vcs was supposed to be like: something complex, I cannot understand so I thought this lack of knowledge was OK.
+
+Then I tried Jujutsu!
+
+## Skeptical
+
 All tech which is announced is crowned as "revolutionary". I have installed software flagged as revolutionary
 and it was all just someone reinventing the wheel, very minimal productivity gains. When jujutsu was mentioned 3 different times: [by gregory, neovim core](https://youtu.be/SnhcXR9CKno?t=905), [Maddie on HN post](https://maddie.wtf/posts/2025-07-21-jujutsu-for-busy-devs) and an old tweet by [Mitchell, ghostty creator](https://x.com/mitchellh/status/1928597859407990902)
 
 I ended up on a conclusion that I tweeted:
 
->Went through the Jujutsu docs   and it smells like someone trying to reinvent the wheel.
-Git is fine.
+> Went through the Jujutsu docs and it smells like someone trying to reinvent the wheel.
+> Git is fine.
 
 This tweet made me feel like I made a professional opinion on a technology with zero skin in the game. I mean
-people do that but I felt off lol. 
+people do that but I felt off saying something so confidently without installing it on my PC.
 
-The docs do not do justice to the technology. During my skimming I stumbled on "TODO" sections, symbolizing undocumented content. This sprouted the idea that this is simply a toy project that might die off.
+The jujutsu docs do not do justice to the technology. During my skimming I stumbled on "TODO" sections, symbolizing undocumented content. This sprouted the idea that this is simply a toy project that might die off.
 
-Extra skeptisism, came from the fact that google has some of its hands in it. But the good news is **this is not a google product**. From the ReadMe Martin,the creator, stated:
+Extra skepticism, came from the fact that google has some of its hands in it. But the good news is **this is not a google product**. From the ReadMe Martin,the creator, stated:
 
->I (Martin von Zweigbergk) started Jujutsu as a hobby project in late 2019, and it has evolved into my full-time project at Google, with several other Googlers (now) assisting development in various capacities. That said, this is not a Google product.
-
-Martin later even confirmed on the discord server on this.
+> I (Martin von Zweigbergk) started Jujutsu as a hobby project in late 2019, and it has evolved into my full-time project at Google, with several other Googlers (now) assisting development in various capacities. That said, this is not a Google product.
 
 ## A philosophical-change
-Jujutsu is not mature enough to be used solo so  you  still have your favourite vcs,git. But here is the twist:
-It is simply a different workflow style, tapping in some play with [mecurital](https://www.mercurial-scm.org/) type of workflow. Working branchless .Sometimes the best way to understand a tool is to use another tool.
 
+Jujutsu is not mature enough to be used solo so you still have your favourite vcs,git. But here is the twist:
+It is simply a different workflow style, tapping in some play with [mercurial](https://www.mercurial-scm.org/) type of workflow. Working branchless .Sometimes the best way to understand a tool is to use another tool.
 
-## Sweet points
+## Sweet points of Jujutsu
+
 1. Choosing to leave conflicts unresolved
 1. jj log is beautiful
-2. commiting before or after
-3. Intergration with formaters w/ jj fix
-4. Working branchless
-5. Cool community: Questions are answered politly 
+1. commiting before or after
+1. Intergration with formaters w/ jj fix
+1. Working branchless
+1. Cool+small community: Questions are answered politely
 
 ## Resources
+
 1. [Steve's tutorial, personal favourite ](http://steveklabnik.github.io/jujutsu-tutorial/)
 1. [Official getting started](https://jj-vcs.github.io/jj/v0.31.0/install-and-setup/)
-
-
-
-
-

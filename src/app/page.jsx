@@ -186,7 +186,7 @@ export function Card({
       </section>
 
       <section className="flex md:hidden overflow-hidden border border-slate-600 rounded-md h-28 ">
-        <Link  href={"/" + link}>
+        <Link href={"/" + link}>
           <section className="flex backdrop-blur-lg rounded-md">
             <div className="flex p-2 gap-4">
               <div className="flex justify-center items-center">
@@ -256,7 +256,18 @@ const batteries_vs_no_batteries = new Blog(
   "batteries-vs-no-batteries",
   "3",
 );
+
+const aJujutsuLater = new Blog(
+  "juju.jpg",
+  "A Jujutsu Later",
+  "30-July-2025",
+  "An exploration on a new VCS tool",
+  "2",
+  "stages-of-jujutsu",
+  "3",
+);
 export const posts = [
+  aJujutsuLater,
   hackathons,
   batteries_vs_no_batteries,
   a_rant_on_escaping_monotony,

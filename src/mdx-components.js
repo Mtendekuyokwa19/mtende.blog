@@ -16,9 +16,11 @@ export function useMDXComponents(components) {
       <mark className="bg-stone-800 text-pink-500"> {children}</mark>
     ),
     p: ({ children }) => (
-      <p className="dark:text-slate-400 text-slate-700  md:w-1/2 w-11/12 text-justify my-2">
-        {children}
-      </p>
+      <span className="md:w-1/2">
+        <p className="dark:text-slate-400 text-slate-700   w-11/12 text-justify my-2">
+          {children}
+        </p>
+      </span>
     ),
     h2: ({ children }) => {
       const anchor = getAnchor(children);
@@ -51,7 +53,7 @@ export function useMDXComponents(components) {
 
     code: ({ children }) => <Code className=" w-28">{children}</Code>,
     blockquote: ({ children }) => (
-      <blockquote className=" text-md md:w-1/2 w-11/12  bg-gray-900 dark:bg-everNav bg-catNav p-4 font-Quicksand italic rounded border-l-2 border-emerald-700 dark:border-emerald-300  ">
+      <blockquote className=" text-md md:w-1/2 w-11/12  bg-gray-300 dark:bg-gray-900 bg-catNav p-4 font-Quicksand italic rounded border-l-2 border-emerald-700 dark:border-emerald-300  ">
         {children}
       </blockquote>
     ),
