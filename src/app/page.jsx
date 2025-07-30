@@ -29,7 +29,7 @@ export function Navbar() {
   return (
     <nav className="flex border-1 z-50  sticky top-1 backdrop-blur-md  border-slate-400 my-2 rounded-2xl font-sans w-4/5 justify-between lg:py-3 py-2 px-4 lg:px-8 items-center   ">
       <h1 title="Mtende header" className="md:text-3xl  text-md font-bold">
-        <a href="/">Mtende</a>
+        <Link href="/">Mtende</Link>
         <span className="text-emerald-400 ">.</span>
       </h1>
 
@@ -186,7 +186,7 @@ export function Card({
       </section>
 
       <section className="flex md:hidden overflow-hidden border border-slate-600 rounded-md h-28 ">
-        <Link href={"/" + link}>
+        <Link  href={"/" + link}>
           <section className="flex backdrop-blur-lg rounded-md">
             <div className="flex p-2 gap-4">
               <div className="flex justify-center items-center">
