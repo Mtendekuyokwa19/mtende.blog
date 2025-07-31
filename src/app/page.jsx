@@ -36,7 +36,7 @@ export function Navbar() {
       </h1>
 
       <div className="flex justify-center items-center md:gap-6 gap-2">
-        <Link title="about" href={"/about"}>
+        <Link title="Blog" href={"/"}>
           <Tab>Blog</Tab>
         </Link>
         <Link title="about" href={"/about"}>
