@@ -19,7 +19,7 @@ import {
 export default function Home() {
   return (
     <article className="flex gap-5 lg:w-2/3 w-11/12 flex-1 items-stretch   flex-col   justify-between">
-      <ShortBio />
+      {/* <ShortBio /> */}
       <BlogPosts />
     </article>
   );
@@ -34,20 +34,13 @@ export function Navbar() {
       </h1>
 
       <div className="flex justify-center items-center md:gap-6 gap-2">
-        <a title="RssFeed" href="/feed.xml/">
-          <BsRssFill title="" className="w-5" />
-        </a>
-        <a
-          title="Github"
-          href="https://github.com/mtendekuyokwa19"
-          target="_blank"
-        >
-          <BsGithub title="" className="w-5" />
-        </a>
-        <a title="Mailbox" href="mailto:mtendekuyokwa19@gmail.com">
-          <BsMailbox title="" className="w-5" />{" "}
-        </a>
-
+        <Link title="about" href={"/about"}>
+          <Tab>Blog</Tab>
+        </Link>
+        <Link title="about" href={"/about"}>
+          <Tab>ABout</Tab>
+        </Link>
+        |
         <ThemeSwitch />
       </div>
     </nav>
@@ -63,8 +56,8 @@ export function Footer() {
       </a>
 
       <div className="flex gap-6">
-        <a href="https://www.linkedin.com/in/mtende-kuyokwa-a71a60241/?originalSubdomain=mw">
-          <BsLinkedin size={iconsize} />
+        <a href="https://github.com/mtendekuyokwa19">
+          <BsGithub size={iconsize} />
         </a>
       </div>
 
@@ -359,3 +352,11 @@ const ThemeSwitch = () => {
     </div>
   ) : null;
 };
+
+function Tab({ children }) {
+  return (
+    <span className="lowercase text-black dark:text-white hover:text-black hidden md:flex  underline  font-sans decoration-emerald-500 hover:bg-emerald-500 text-xl">
+      /{children}
+    </span>
+  );
+}
