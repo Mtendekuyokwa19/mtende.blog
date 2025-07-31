@@ -16,8 +16,8 @@ export function useMDXComponents(components) {
       <mark className="bg-stone-800 text-pink-500"> {children}</mark>
     ),
     p: ({ children }) => (
-      <span className="md:w-1/2">
-        <p className="dark:text-slate-400 text-slate-700   w-11/12 text-justify my-2">
+      <span className="md:w-1/2 w-11/12">
+        <p className="dark:text-slate-400 text-slate-700    text-justify my-2">
           {children}
         </p>
       </span>
