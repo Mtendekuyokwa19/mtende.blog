@@ -19,7 +19,7 @@ import {
 
 export default function Home() {
   return (
-    <article className="flex  lg:w-11/12 w-11/12     flex-col   ">
+    <article className="flex  lg:w-11/12 w-11/12     justify-center py-9   ">
       <BlogPosts />
     </article>
   );
@@ -284,7 +284,7 @@ export function BlogPosts({ initializer = 0 }) {
   }
   return (
     <section className="flex  flex-col">
-      <h2 className="lg:text-2xl text-lg font-bold">Blog posts</h2>
+      <h2 className="lg:text-2xl text-lg font-bold">All Posts</h2>
       <section className="grid lg:grid-cols-2 grid-cols-1 grid-rows-4 gap-3 lg:gap-6 py-4 flex-col">
         {cards}
       </section>
@@ -368,7 +368,7 @@ export function ToTop() {
   return (
     <button
       onClick={toTop}
-      className="bg-emerald-500 absolute p-5 rounded-full flex "
+      className="fixed border-2 hover:bg-emerald-500 md:left-11/12 hidden md:top-10/12  md:p-5 p-2 rounded-full md:flex "
     >
       <FaChevronUp />
     </button>

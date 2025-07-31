@@ -59,13 +59,14 @@ export default function RootLayout({ children }) {
           <div className="     flex dark:bg-[#1c2225] dark:text-[#D3C6AA] text-[#232A2E]  bg-[#d8dee9] flex-col justify-center items-center  bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:39px_49px]">
             <Navbar />
             <main
-              className={`${maven.variable} ${inter.variable} ${rowdies.variable} antialiased z-50 flex      flex-col justify-center items-center`}
+              className={`${maven.variable} ${inter.variable} ${rowdies.variable} antialiased py-12 z-50 flex      flex-col justify-center items-center`}
             >
               {children}
 
               <ToTop />
-              <Footer />
             </main>
+
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
