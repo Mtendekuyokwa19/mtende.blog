@@ -1,5 +1,6 @@
 "use client";
 import { useTheme } from "next-themes";
+import { FaChevronUp } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -18,8 +19,7 @@ import {
 
 export default function Home() {
   return (
-    <article className="flex gap-5 lg:w-2/3 w-11/12 flex-1 items-stretch   flex-col   justify-between">
-      {/* <ShortBio /> */}
+    <article className="flex  lg:w-11/12 w-11/12     flex-col   ">
       <BlogPosts />
     </article>
   );
@@ -27,7 +27,7 @@ export default function Home() {
 
 export function Navbar() {
   return (
-    <nav className="flex border-1 z-50  sticky top-1 backdrop-blur-md  border-slate-400 my-2 rounded-2xl font-sans w-4/5 justify-between lg:py-3 py-2 px-4 lg:px-8 items-center   ">
+    <nav className="flex  border-1 z-50 lg:w-1/2    backdrop-blur-md  border-slate-400 my-2 rounded-2xl font-sans w-4/5 justify-between lg:py-3 py-2 px-4 lg:px-8 items-center   ">
       <h1 title="Mtende header" className="md:text-3xl  text-md font-bold">
         <Link href="/">Mtende</Link>
         <span className="text-emerald-400 ">.</span>
@@ -285,7 +285,7 @@ export function BlogPosts({ initializer = 0 }) {
   return (
     <section className="flex  flex-col">
       <h2 className="lg:text-2xl text-lg font-bold">Blog posts</h2>
-      <section className="  grid lg:grid-cols-2 grid-cols-1 grid-rows-4 gap-3 lg:gap-6 py-4 flex-col">
+      <section className="grid lg:grid-cols-2 grid-cols-1 grid-rows-4 gap-3 lg:gap-6 py-4 flex-col">
         {cards}
       </section>
     </section>
@@ -358,5 +358,19 @@ function Tab({ children }) {
     <span className="lowercase text-black dark:text-white hover:text-black hidden md:flex  underline  font-sans decoration-emerald-500 hover:bg-emerald-500 text-xl">
       /{children}
     </span>
+  );
+}
+
+export function ToTop() {
+  function toTop() {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }
+  return (
+    <button
+      onClick={toTop}
+      className="bg-emerald-500 absolute p-5 rounded-full flex "
+    >
+      <FaChevronUp />
+    </button>
   );
 }
