@@ -1,4 +1,6 @@
 "use client";
+
+import { RxHamburgerMenu } from "react-icons/rx";
 import { useTheme } from "next-themes";
 import { FaChevronUp } from "react-icons/fa";
 import Image from "next/image";
@@ -27,7 +29,7 @@ export default function Home() {
 
 export function Navbar() {
   return (
-    <nav className="flex  border-1 z-50 lg:w-1/2    backdrop-blur-md  border-slate-400 my-2 rounded-2xl font-sans w-4/5 justify-between lg:py-3 py-2 px-4 lg:px-8 items-center   ">
+    <nav className="flex  border-1 z-50 lg:w-1/2 w-11-12   backdrop-blur-md  border-slate-400 my-2 rounded-2xl font-sans w-4/5 justify-between lg:py-3 py-2 px-4 lg:px-8 items-center   ">
       <h1 title="Mtende header" className="md:text-3xl  text-md font-bold">
         <Link href="/">Mtende</Link>
         <span className="text-emerald-400 ">.</span>
@@ -40,7 +42,7 @@ export function Navbar() {
         <Link title="about" href={"/about"}>
           <Tab>ABout</Tab>
         </Link>
-        |
+
         <ThemeSwitch />
       </div>
     </nav>
@@ -355,7 +357,7 @@ const ThemeSwitch = () => {
 
 function Tab({ children }) {
   return (
-    <span className="lowercase text-black dark:text-white hover:text-black hidden md:flex  underline  font-sans decoration-emerald-500 hover:bg-emerald-500 text-xl">
+    <span className="lowercase text-black dark:text-white hover:text-black md:flex  underline  font-sans decoration-emerald-500 hover:bg-emerald-500 text-sm md:text-xl">
       /{children}
     </span>
   );
