@@ -370,7 +370,7 @@ export function ToTop() {
   return (
     <button
       onClick={toTop}
-      className="fixed border-2 hover:bg-emerald-500 md:left-11/12 hidden md:top-10/12  md:p-5 p-2 rounded-full md:flex "
+      className="fixed border-2 hover:bg-emerald-500 top-10/12 left-10/12  md:left-11/12 md:top-10/12  md:p-5 p-1 rounded-full flex "
     >
       <FaChevronUp />
     </button>
