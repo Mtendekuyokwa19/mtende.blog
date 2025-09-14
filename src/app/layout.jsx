@@ -1,22 +1,24 @@
 "use client";
 import { Analytics } from "@vercel/analytics/next";
-
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { Maven_Pro, Rowdies, Pacifico } from "next/font/google";
 import "./globals.css";
-import { Footer, Navbar, ToTop } from "@/app/components/mdx/Navbar";
+import { Footer, Navbar, ToTop } from "./components/mdx/Navbar";
+
 const inter = Pacifico({
   subsets: ["latin"],
   display: "swap",
   weight: "400",
   variable: "--font-pacifico",
 });
+
 const maven = Maven_Pro({
   subsets: ["latin"],
   display: "swap",
   weight: "400",
   variable: "--font-maven-pro",
 });
+
 const rowdies = Rowdies({
   subsets: ["latin"],
   display: "swap",
