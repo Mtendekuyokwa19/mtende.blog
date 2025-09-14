@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { Maven_Pro, Rowdies, Pacifico } from "next/font/google";
 import "./globals.css";
-import { Footer, Navbar, ToTop } from "@/app/components/mdx/navbar";
+import { Footer, Navbar, ToTop } from "@/app/components/mdx/Navbar";
 const inter = Pacifico({
   subsets: ["latin"],
   display: "swap",
