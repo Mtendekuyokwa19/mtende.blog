@@ -261,7 +261,18 @@ const aJujutsuLater = new Blog(
   "a-jujutsu-later",
   "3",
 );
+
+const skillIssue = new Blog(
+  "witch.jpg",
+  "Skill-Issue Acceptance",
+  "14-Sept-2025",
+  "An epiphany on my thinking capacity",
+  "2",
+  "skill-issue-acceptance",
+  "1",
+);
 export const posts = [
+  skillIssue,
   aJujutsuLater,
   hackathons,
   batteries_vs_no_batteries,

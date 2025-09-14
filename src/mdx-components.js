@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Code from "@/components/mdx/code";
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
 // React component you want, including inline styles,
@@ -51,7 +50,7 @@ export function useMDXComponents(components) {
       <li className=" text-md  list-disc  text-left">{children}</li>
     ),
 
-    code: ({ children }) => <Code className=" w-28">{children}</Code>,
+    code: ({ children }) => <code className=" w-28">{children}</code>,
     blockquote: ({ children }) => (
       <blockquote className=" text-md md:w-1/2 w-11/12  bg-gray-300 dark:bg-gray-900 bg-catNav p-4 font-Quicksand italic rounded border-l-2 border-emerald-700 dark:border-emerald-300  ">
         {children}
