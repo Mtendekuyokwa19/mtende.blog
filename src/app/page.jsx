@@ -1,23 +1,9 @@
 "use client";
 
-import { RxHamburgerMenu } from "react-icons/rx";
 import { useTheme } from "next-themes";
-import { FaChevronUp } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
-import {
-  BsArrowLeft,
-  BsBoxArrowInLeft,
-  BsDiscord,
-  BsGithub,
-  BsLinkedin,
-  BsMailbox,
-  BsMedium,
-  BsRssFill,
-  BsTwitter,
-} from "react-icons/bs";
 
 export default function Home() {
   return (
