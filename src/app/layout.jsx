@@ -1,9 +1,11 @@
 "use client";
 import { Analytics } from "@vercel/analytics/next";
+
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { Maven_Pro, Rowdies, Pacifico } from "next/font/google";
 import "./globals.css";
 import { Footer, Navbar, ToTop } from "./components/mdx/Navbar";
+import { Finn } from "./components/mdx/finn";
 
 const inter = Pacifico({
   subsets: ["latin"],
@@ -46,6 +48,7 @@ export default function RootLayout({ children }) {
               <ToTop />
             </main>
 
+            <Finn />
             <Footer />
           </div>
         </ThemeProvider>
