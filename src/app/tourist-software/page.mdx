@@ -1,0 +1,41 @@
+# Tourist software	
+
+[*2025-10-16*]
+
+![a photo of a emacs config](/emacs.jpg)
+
+
+Over the past week I have been writing my end of year exams. To fight the stress and the bore of my lecture notes I opened up the most haram documentation any vim user could
+open i.e the emacs-tutorial. I even went a mile further to reading the _masteringemacs_ blog by [Mickey](https://masteringemacs.org). 
+
+I tried my best to follow the best practices recommended by the guys from the emacs irc like not using doom or spacemacs as it robs you of your learning experience. I did try out steven purcel's config which can be a kickstarter.nvim equivalent but I later dropped it and raw-dogged my own config.
+
+In all biasness with emacs, I realised that I have wanted to try it for a long [time](https://mtende.vercel.app).
+## Emacs pros
+Emacs comes with a package manager. This feature is so underated and can be overlooked as a vim user but having to install a plugin with a simple "alt+x+package-install-evil" is a nicer experince than copying lazy.nvim codes. It sort of give you a taste of both worlds of VS-code plugin installation and vim's abiltity to configure the behavior of plugins.
+When you use the inbuilt package manager packages are automatically added to the buttom of your init.el. 
+
+Configuration is so easy in emacs that I managed to get my nvim-equivalent setup in about 140 lines. Elisp is not as confusing as lua. Sure the brackets seem scary from the birds eye view but when you play with them they are simple 
+
+Another juicy plus of emacs is that lsp setup is the so easy. Don't get me wrong, nvim setup in vim is good but with emas its simpler. You firstly install an lsp manager called "lsp-mode" with "M-X package-install lsp-mode" then you run "M-X lsp-install-server ts_ls". You can now open any typescript file and you will get lsp-completion. You can use company  which can the thought of as a completion engine like blink but it also works without it. 
+
+Lastly, Modes. Each lang has its own mode. A mode can be a Major one or a minor one. A major mode can be thought of as "settings for file" or filetype and a minor mode can be thought of as plugins that work for all files. The thing with major mode is that they help manipulate behaviors of different file-types in emacs. Vim treats all files as the same in terms of editing. In emacs, a "word" can be treated differently in text file than in a python file whilst in vim a word is a word.For instance, in  text-mode the aprostophe on words can be skipped whilst when in typescript it cannot be skipped. This is not a sock dropping feature on explaination but it cool when you see it in action.
+
+## Not for me
+I like vim, I love vim, I want vim everywhere. In a previous blog I wrote about [skill issue accecptance ](/skill-issue-acceptance), This is one of the times I put it in practice.
+
+My obsession with vim made me try to use emacs like the way I use vim. I had my telescope equivalent for file-picker, oil plugin equivalent i.e dired and well evil i.e vim pugin. During my config build, I spent all morning changing the bindings of emacs to sort of vim equivalent. I was trying to make emacs vim.
+
+I tried the vanilla emacs bindings and I have to say they are the worst bindings I have seen in my life, period!!. I had my hand bending into the weirdest of shapes (will rant about god-mode later). I do not want to press ctrl everytime. As a person who spends more time editing and less time writing this was a downer for me. I do not want to press 6 keys just to move up 10 times "ctrl-u 10 ctrl-p". I love how in one of the blog posts Mickey actually accpeted that vim beats emacs in terms of brevity. 
+
+I want one thing from an editor and it should be convinience to do things.
+
+
+## Whats next	
+Now that I have accumulated some knowledge on emacs I think I have the right to hate on it lol.
+
+In all seriousness, I plan to read up more on org-mode and org-roam to maybe stick with it long enough until it clicks. In the words of emacs chads --"emacs is not for tourist"--. I hate that I treated emacs like a vim alternative and less as an independent tool with its own philosphy. I compared it to vim alot and cried a little everytime I used it.
+
+I have to get homerow mods setup so that I do not always have to reach for the CTRL key and Alt key. I tried to do it hand my t440 was glitching on some words so I removed them. Thats means I need a new keyboard lol.
+
+
