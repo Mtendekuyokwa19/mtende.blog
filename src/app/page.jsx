@@ -1,5 +1,5 @@
 "use client";
-import { BlogPosts } from "@/app/components/Blogcard";
+import { BlogPosts } from "@/app/components/BlogCard";
 export default function Page() {
   return (
     <article className="flex  lg:w-11/12 w-11/12     justify-center py-9   ">
