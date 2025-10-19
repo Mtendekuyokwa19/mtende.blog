@@ -157,11 +157,11 @@ const skillIssue = new Blog(
 
 const nixers = new Blog(
   "somenix.webp",
-  "Nixers in paris",
+  "two minix later",
   "19-Oct-2025",
   "A review of nixos",
   "2",
-  "nixers-in-paris",
+  "two-nix-later",
   "1",
 );
 export const posts = [
