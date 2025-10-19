@@ -1,0 +1,27 @@
+# Nixers in paris
+
+[*2025-10-19*]
+
+![a photo of a emacs config](/somenix.webp)
+
+GitHub registers that it has been two months since I initialized my nixos-config repo. I guess it is time for a review :)
+
+## Reason for a switch
+
+On a beautiful and stormy night, my arch broke. I was trying to remove some old packages that I used some time back once. I removed a package, and Arch was unable to boot up from then on. I was unaware that it was a vital program for the arch system . Google lookups and YouTube solutions were no help , and I was 4 hours away from my exam.
+
+Another reason for the switch was that my surgeon friend had tried it and really glorified it. And an itch to try it piled up even more when I read about how I can't break it. As a tinkerer, I really triggered by that.
+
+## Two months later
+
+I am happy here, I am confused here, and I can't escape.
+
+Firstly, I am happy here because I actually managed to sort of break NixOS. I installed someone’s dots and rebuilt them on my system. I wanted to try out that reproducibility "idea". It worked more than I expected. It changed my password. I tried to switch back to my old generations, but my password was changed even on that side, and I couldn't log in.
+I managed to recover it because I still had root access to my NixOS so I just used `passwd` utility. Shout out to nix Discord mods for the help.
+
+Secondly, I am confused here. In the space of two months, I left NixOS for Void because I wanted to compare performance and RAM use. I thought NixOS applications were so big as the builds were around 250mb even for small applications. The same apps had smaller binaries sizes on my Manjaro friend's computer. I wonder whether NixOS builds from source for some application even on the stable branch. I also had problems with Void and Nix package manager as it wasn't apparently conversant with init, Void's systemd equivalent.
+In terms of Ram usage and performance, it was all the same.
+
+Lastly, I can't escape. One reason I ended up moving back from void was that in nixos, once I fix an issue with an app, I have fixed it forever and everywhere. Another plus is that I can also easily uninstall packages without having to worry about dependency breakages.
+
+I also just love the generations builds. I love going to a previous build if the current one has problems. The fact that my whole system build can be changed by switching git revsets is freaking amazing!!!!!!!

@@ -154,8 +154,19 @@ const skillIssue = new Blog(
   "skill-issue-acceptance",
   "1",
 );
+
+const nixers = new Blog(
+  "somenix.webp",
+  "Nixers in paris",
+  "19-Oct-2025",
+  "A review of nixos",
+  "2",
+  "nixers-in-paris",
+  "1",
+);
 export const posts = [
-	emacs,
+  nixers,
+  emacs,
   skillIssue,
   aJujutsuLater,
   hackathons,
@@ -163,7 +174,6 @@ export const posts = [
   a_rant_on_escaping_monotony,
   health_as_a_dev,
 ];
-
 export function BlogPosts({ initializer = 0 }) {
   let cards = [];
   for (let i = initializer; i < posts.length; i++) {
