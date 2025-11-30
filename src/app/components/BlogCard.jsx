@@ -168,13 +168,24 @@ const nixers = new Blog(
 const ohlinkedin = new Blog(
    "linkedin.webp",
    "oh linkedin, why?",
-   "19-Oct-2025",
+   "29-Oct-2025",
    "A rant about the linkedin",
    "2",
    "oh-linkedin-why",
    "1",
 );
+
+const overengineering = new Blog(
+   "over.jpg",
+   "The overengineering problem",
+   "30-Nov-2025",
+   "A rant about the software architecture",
+   "2",
+   "overengineering-problem",
+   "1",
+);
 export const posts = [
+   overengineering,
    ohlinkedin,
    nixers,
    emacs,
