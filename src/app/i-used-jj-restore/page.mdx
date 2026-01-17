@@ -16,20 +16,20 @@ So Here is what happenned...
  But here is the sweet thing: personB was on a new changeID already. 
 
  ## What I thought would work
- I was like let me simply merge personA last commit with personB(my) new commit but the files were still lost ie that is _"jj new <oldChangeId> <newChangeId>"_.
+ I was like let me simply merge personA last commit with personB(my) new commit but the files were still lost ie that is _"jj new oldChangeId newChangeId"_.
 
 
  Then I remembered that sometimes if you delete files from one commit and try to merge it with a new one, the new state overrides the old commits. shucks!!
 
 I had to _"jj undo"_ to unmerge.
 
-td;dr _"jj new <oldChangeId> <newChangeId>"_ did not work.
+td;dr _"jj new oldChangeId newChangeId"_ did not work.
 
 ## Who needs a hero
 After hitting the docs, I came across _"jj restore"_. I simply
-_"jj restore --from <oldChangeId> --into <newChangeId>"_ and I lost all the new files I worked on. In the brink of lashing out at martinvonz(creator of jj), a small sentence stated that you can add "[filesets]" and I added it to the tail of the command.
+_"jj restore --from oldChangeId --into newChangeId"_ and I lost all the new files I worked on. In the brink of lashing out at martinvonz(creator of jj), a small sentence stated that you can add "[filesets]" and I added it to the tail of the command.
 
-_"jj restore --from <oldChangeId> --into <newChangeId> [filesets]"_ and lo and behold, I got the files back.
+_"jj restore --from oldChangeId --into newChangeId [filesets]"_ and lo and behold, I got the files back.
 
 
 ## whats next
