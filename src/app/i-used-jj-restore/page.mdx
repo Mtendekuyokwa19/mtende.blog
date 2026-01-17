@@ -1,6 +1,6 @@
 # I used jj restore
 
-[*2025-07-30*]
+[*2026-01-17*]
 
 ![a photo of a sickle](/restore.jpg)
 
@@ -18,8 +18,10 @@ So Here is what happenned...
  ## What I thought would work
  I was like let me simply merge personA last commit with personB(my) new commit but the files were still lost ie that is _"jj new <oldChangeId> <newChangeId>"_.
 
+
  Then I remembered that sometimes if you delete files from one commit and try to merge it with a new one, the new state overrides the old commits. shucks!!
 
+I had to _"jj undo"_ to go back to unmerge.
 
 td;dr _"jj new <oldChangeId> <newChangeId>"_ did not work.
 
@@ -30,6 +32,8 @@ _"jj restore --from <oldChangeId> --into <newChangeId>"_ and I lost all the new 
 _"jj restore --from <oldChangeId> --into <newChangeId> [filesets]"_ and lo and behold, I got the files back.
 
 
-
+## whats next
+-Read more jj docs on restore
+- Read about diff copy
 
 
