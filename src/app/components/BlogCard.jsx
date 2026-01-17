@@ -186,7 +186,7 @@ const overengineering = new Blog(
 );
 
 const jujustuRestore = new Blog(
-  "restore.jpg",
+  "restore.jpeg",
   "I used jj restore",
   "17-Jan-2026",
   "First time using jj restore",
