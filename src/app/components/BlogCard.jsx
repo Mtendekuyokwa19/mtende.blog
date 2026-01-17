@@ -184,6 +184,16 @@ const overengineering = new Blog(
    "overengineering-problem",
    "1",
 );
+
+const jujustuRestore = new Blog(
+   "restore.jpg",
+   "I used jj restore",
+   "17-Jan-2026",
+   "First time using jj restore",
+   "2",
+   "i-used-jj-restore",
+   "3",
+);
 export const posts = [
    overengineering,
    ohlinkedin,
